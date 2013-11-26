@@ -13,7 +13,7 @@
 // instead.
 //
 // It's also pretty fast though, I suppose, it could be made faster, but not by a lot.  Some people might point out that it could be made faster
-// if it cached the source block-chain file but, really, virtually all operating systems do that under the hood any way so 
+// if it cached the source block-chain file but, really, virtually all operating systems do that under the hood any way so
 // I doubt it would make much difference.  As it is, it reads one bitcoin blockchain 'block' into memory at a time, parses the transactions,
 // inputs, and outputs, and returns them to the caller.  A person who would use this code snippet would, most likely, take this data
 // and convert it into some other more reasonable format for further processing and analysis.  At least that's what I plan to do.
@@ -22,18 +22,18 @@
 //
 // My machine parses this entire data set in roughly 95 seconds.
 //
-// It is important to note that this code assumes that you are running on a small-endian machine, like an X86.  It *does not* run on 
+// It is important to note that this code assumes that you are running on a small-endian machine, like an X86.  It *does not* run on
 // big-endian machines (like a PowerPC for example).  If you have a big-endian machine, what can I say, get a real processor.
 //
 // http://en.wikipedia.org/wiki/Endianness
 //
-// This code snippet was written by John W. Ratcliff (jratcliffscarab@gmail.com) on June 30, 2013 on a lazy rainy Sunday afternoon 
+// This code snippet was written by John W. Ratcliff (jratcliffscarab@gmail.com) on June 30, 2013 on a lazy rainy Sunday afternoon
 //
 // I wrote this code snippet for two reasons.  First, I just wanted to understand the bitcoin blockchain format myself and
 // since I run the full bitcoin-qt client on my machine, I have all the data stored on my hard drive anyway.
 //
 // The second reason I wrote it is that I have an interest in doing some analysis on the block-chain data and, to do that, I first need to
-// be able to parse the transactions.  When I looked at available resources on the internet they all use various scripting languages and 
+// be able to parse the transactions.  When I looked at available resources on the internet they all use various scripting languages and
 // JSON-RPC.  That just screams stunningly, outrageously, absurdly, slow to me.
 //
 // The specific data I want to analyze it a study of the historical data value of outstanding and current bitcoins in circulation.
@@ -119,7 +119,7 @@ public:
 		const uint8_t	*publicKey;				// The public key output
 	};
 
-	// Each block contains a series of transactions; each transaction with it's own set of inputs and outputs.  
+	// Each block contains a series of transactions; each transaction with it's own set of inputs and outputs.
 	// This class describes the transaction data.
 	class BlockTransaction
 	{
@@ -185,7 +185,7 @@ public:
 	virtual const BlockTransaction *readSingleTransaction(uint32_t fileIndex,uint32_t fileOffset,uint32_t transactionLength) = 0;
 
 	virtual const BlockTransaction *processSingleTransaction(const void *transactionData,uint32_t transactionLength) = 0;
-	
+
 	// Will process the raw binary data for a single block
 	// No memory copies; pointers in the block will refer back to the buffer passed in.
 	virtual const Block * processSingleBlock(const void *blockData,uint32_t blockLength) = 0;

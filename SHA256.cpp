@@ -31,14 +31,14 @@
 #include "SHA256.h"
 #include <string.h>
 
-#ifdef _MSC_VER 
+#ifdef _MSC_VER
 #pragma warning(disable:4718) // Disable a compiler optimization warning on visual studio
 #endif
 
 
 #define SHA256_HASH_SIZE  32	/* 256 bit */
 #define SHA256_HASH_WORDS 8
-#define SHA256_UNROLL 64	// This define determines how much loop unrolling is done when computing the hash; 
+#define SHA256_UNROLL 64	// This define determines how much loop unrolling is done when computing the hash;
 
 // Uncomment this line of code if you want this snippet to compute the endian mode of your processor at run time; rather than at compile time.
 //#define RUNTIME_ENDIAN
@@ -46,12 +46,12 @@
 // Uncomment this line of code if you want this routine to compile for a big-endian processor
 //#define WORDS_BIGENDIAN
 
-typedef struct 
+typedef struct
 {
 	uint64_t totalLength;
 	uint32_t hash[SHA256_HASH_WORDS];
 	uint32_t bufferLength;
-	union 
+	union
 	{
 		uint32_t words[16];
 		uint8_t bytes[64];
@@ -421,7 +421,7 @@ void sha256_update(sha256_ctx_t * sc, const void *data, uint32_t len)
 	uint32_t bytesToCopy;
 	int needBurn = 0;
 
-	if (sc->bufferLength) 
+	if (sc->bufferLength)
 	{
 		bufferBytesLeft = 64L - sc->bufferLength;
 		bytesToCopy = bufferBytesLeft;
@@ -434,7 +434,7 @@ void sha256_update(sha256_ctx_t * sc, const void *data, uint32_t len)
 		sc->bufferLength += bytesToCopy;
 		data = ((uint8_t *) data) + bytesToCopy;
 		len -= bytesToCopy;
-		if (sc->bufferLength == 64L) 
+		if (sc->bufferLength == 64L)
 		{
 			SHA256Guts(sc, sc->buffer.words);
 			needBurn = 1;
@@ -442,7 +442,7 @@ void sha256_update(sha256_ctx_t * sc, const void *data, uint32_t len)
 		}
 	}
 
-	while (len > 63L) 
+	while (len > 63L)
 	{
 		sc->totalLength += 512L;
 
@@ -453,7 +453,7 @@ void sha256_update(sha256_ctx_t * sc, const void *data, uint32_t len)
 		len -= 64L;
 	}
 
-	if (len) 
+	if (len)
 	{
 		memcpy(&sc->buffer.bytes[sc->bufferLength], data, len);
 		sc->totalLength += len * 8L;
@@ -483,9 +483,9 @@ void sha256_finalize(sha256_ctx_t * sc, uint8_t hash[SHA256_HASH_SIZE])
 	sha256_update(sc, padding, bytesToPad);
 	sha256_update(sc, &lengthPad, 8L);
 
-	if (hash) 
+	if (hash)
 	{
-		for (i = 0; i < SHA256_HASH_WORDS; i++) 
+		for (i = 0; i < SHA256_HASH_WORDS; i++)
 		{
 			*((uint32_t *) hash) = BYTESWAP(sc->hash[i]);
 			hash += 4;
