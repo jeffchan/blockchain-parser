@@ -1,3 +1,4 @@
+SHELL=/bin/sh
 CPLUS = g++
 
 all: parser
