@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+ProjectType="Visual C++"
+Version="9.00"
+Name="blockchain"
+>
+<Platforms>
+	<Platform Name="Win32"/>
+</Platforms>
+<Configurations>
+  <Configuration
+    Name="debug|Win32"
+    OutputDirectory="./../.."
+    IntermediateDirectory="./Win32/blockchain/debug"
+    ConfigurationType="1"
+    InheritedPropertySheets=""
+    CharacterSet="2"
+    >
+    <Tool
+      Name="VCCLCompilerTool"
+      AdditionalIncludeDirectories="&quot;./../../config&quot;;"
+      PreprocessorDefinitions="WIN32;_WINDOWS;UNICODE=1;_CRT_SECURE_NO_DEPRECATE;OPEN_SOURCE=1;_DEBUG;"
+      WarningLevel="3"
+      FloatingPointModel="2"
+      DebugInformationFormat="3"
+      WarnAsError="true"
+      Optimization="4"
+      AdditionalOptions="/W4"
+      RuntimeLibrary="1"
+      UsePrecompiledHeader="0"
+      PrecompiledHeaderThrough=""
+      />
+    <Tool Name="VCCustomBuildTool"/>
+    <Tool 
+      Name="VCLinkerTool" 
+      OutputFile="$(OutDir)/blockchain32DEBUG.exe" 
+      ProgramDatabaseFile="$(OutDir)/blockchain32DEBUG.exe.pdb" 
+      AdditionalOptions="/DEBUG /MACHINE:X86"
+      AdditionalDependencies=""
+      AdditionalLibraryDirectories=""
+      ImportLibrary="$(OutDir)/$(TargetName).lib"
+      GenerateMapFile="TRUE"
+      MapFileName="$(OutDir)/blockchain32DEBUG.exe.map"
+      SubSystem="1"
+      />
+    <Tool Name="VCMIDLTool"/>
+    <Tool Name="VCPreBuildEventTool"/>
+    <Tool Name="VCPostBuildEventTool"/>
+    <Tool Name="VCPreLinkEventTool"/>
+    <Tool Name="VCResourceCompilerTool"/>
+    <Tool Name="VCWebServiceProxyGeneratorTool"/>
+    <Tool Name="VCXMLDataGeneratorTool"/>
+    <Tool Name="VCWebDeploymentTool"/>
+    <Tool Name="VCManagedWrapperGeneratorTool"/>
+    <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+  </Configuration>
+  <Configuration
+    Name="release|Win32"
+    OutputDirectory="./../.."
+    IntermediateDirectory="./Win32/blockchain/release"
+    ConfigurationType="1"
+    InheritedPropertySheets=""
+    CharacterSet="2"
+    >
+    <Tool
+      Name="VCCLCompilerTool"
+      AdditionalIncludeDirectories="&quot;./../../config&quot;;"
+      PreprocessorDefinitions="WIN32;_WINDOWS;UNICODE=1;_CRT_SECURE_NO_DEPRECATE;OPEN_SOURCE=1;NDEBUG;"
+      WarningLevel="3"
+      FloatingPointModel="2"
+      DebugInformationFormat="3"
+      WarnAsError="true"
+      Optimization="2"
+      AdditionalOptions="/W4"
+      RuntimeLibrary="0"
+      UsePrecompiledHeader="0"
+      PrecompiledHeaderThrough=""
+      />
+    <Tool Name="VCCustomBuildTool"/>
+    <Tool 
+      Name="VCLinkerTool" 
+      OutputFile="$(OutDir)/blockchain32.exe" 
+      ProgramDatabaseFile="$(OutDir)/blockchain32.exe.pdb" 
+      AdditionalOptions="/DEBUG /MACHINE:X86"
+      AdditionalDependencies=""
+      AdditionalLibraryDirectories=""
+      ImportLibrary="$(OutDir)/$(TargetName).lib"
+      GenerateMapFile="TRUE"
+      MapFileName="$(OutDir)/blockchain32.exe.map"
+      SubSystem="1"
+      />
+    <Tool Name="VCMIDLTool"/>
+    <Tool Name="VCPreBuildEventTool"/>
+    <Tool Name="VCPostBuildEventTool"/>
+    <Tool Name="VCPreLinkEventTool"/>
+    <Tool Name="VCResourceCompilerTool"/>
+    <Tool Name="VCWebServiceProxyGeneratorTool"/>
+    <Tool Name="VCXMLDataGeneratorTool"/>
+    <Tool Name="VCWebDeploymentTool"/>
+    <Tool Name="VCManagedWrapperGeneratorTool"/>
+    <Tool Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+  </Configuration>
+</Configurations>
+<References></References>
+<Files>
+  <Filter Name="blockchain" Filter=""> <!--  -->
+    <File RelativePath="..\..\Base58.h">
+    </File>
+    <File RelativePath="..\..\BitcoinAddress.h">
+    </File>
+    <File RelativePath="..\..\BlockChain.h">
+    </File>
+    <File RelativePath="..\..\BlockChainAddresses.h">
+    </File>
+    <File RelativePath="..\..\keyboard.h">
+    </File>
+    <File RelativePath="..\..\RIPEMD160.h">
+    </File>
+    <File RelativePath="..\..\SHA256.h">
+    </File>
+    <File RelativePath="..\..\Base58.cpp">
+    </File>
+    <File RelativePath="..\..\BitcoinAddress.cpp">
+    </File>
+    <File RelativePath="..\..\BlockChain.cpp">
+    </File>
+    <File RelativePath="..\..\BlockChainAddresses.cpp">
+    </File>
+    <File RelativePath="..\..\keyboard.cpp">
+    </File>
+    <File RelativePath="..\..\main.cpp">
+    </File>
+    <File RelativePath="..\..\RIPEMD160.cpp">
+    </File>
+    <File RelativePath="..\..\SHA256.cpp">
+    </File>
+  </Filter>
+</Files>
+<Globals></Globals>
+</VisualStudioProject>

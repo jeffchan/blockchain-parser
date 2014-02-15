@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Filter Include="blockchain"><!--  -->
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="..\..\Base58.h">
+			<Filter>blockchain</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\BitcoinAddress.h">
+			<Filter>blockchain</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\BlockChain.h">
+			<Filter>blockchain</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\BlockChainAddresses.h">
+			<Filter>blockchain</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\keyboard.h">
+			<Filter>blockchain</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\RIPEMD160.h">
+			<Filter>blockchain</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\SHA256.h">
+			<Filter>blockchain</Filter>
+		</ClInclude>
+		<ClCompile Include="..\..\Base58.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\BitcoinAddress.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\BlockChain.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\BlockChainAddresses.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\keyboard.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\main.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\RIPEMD160.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+		<ClCompile Include="..\..\SHA256.cpp">
+			<Filter>blockchain</Filter>
+		</ClCompile>
+	</ItemGroup>
+</Project>

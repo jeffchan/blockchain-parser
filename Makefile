@@ -1,10 +1,4 @@
-SHELL=/bin/sh
-CPLUS = g++
-
-all: parser
-
-parser: *.cpp *.h
-	@${CPLUS} *.cpp -o parser
-
-clean:
-	@rm -rf parser
+blockchain.out: *.cpp *.h
+	g++ *.cpp -o blockchain.out
+run:	blockchain.out
+	./blockchain.out

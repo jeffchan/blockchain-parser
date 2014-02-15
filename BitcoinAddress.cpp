@@ -1418,3 +1418,26 @@ bool bitcoinAsciiToAddress(const char *input,uint8_t output[25]) // convert an A
 	}
 	return ret;
 }
+
+
+void bitcoinRIPEMD160ToAddress(const uint8_t ripeMD160[20],uint8_t output[25])
+{
+	uint8_t hash1[32]; // holds the intermediate SHA256 hash computations
+	output[0] = 0;	// Store a network byte of 0 (i.e. 'main' network)
+	memcpy(&output[1],ripeMD160,20); // copy the 20 byte of the public key address
+	SHA256::computeSHA256(output,21,hash1);	// Compute the SHA256 hash of the RIPEMD16 hash + the one byte header (for a checksum)
+	SHA256::computeSHA256(hash1,32,hash1); // now compute the SHA256 hash of the previously computed SHA256 hash (for a checksum)
+	output[21] = hash1[0];	// Store the checksum in the last 4 bytes of the public key hash
+	output[22] = hash1[1];
+	output[23] = hash1[2];
+	output[24] = hash1[3];
+}
+
+bool bitcoinAddressToAscii(const uint8_t address[25],char *output,uint32_t maxOutputLen)
+{
+	bool ret = false;
+
+	ret = BASE58::encodeBase58(address,25,true,output,maxOutputLen);
+
+	return ret;
+}
